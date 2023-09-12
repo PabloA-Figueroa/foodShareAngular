@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+header {
+  background: rgba(60, 109, 54, 0.88);
+  color: #fff; /* Color del texto en el header */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+}
+.logo {
+  display: flex; /* Cambia el contenedor a un diseño flexible */
+  align-items:center; /* Centra verticalmente los elementos */
+}
+.logo img {
+  width: 102px;
+  height: 100px;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+.logo h1 {
+  color: #ffffff;
+  font-family: "Roboto-ExtraBold", Helvetica;
+  font-size: 35px;
+  font-weight: 800;
+  line-height: normal;
+  margin: 0; /* Elimina el margen en el título para acercarlo al logo */
+
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 20px 10px;
+  width: 100%;
+  display: flex;
+  margin-left: 200px; /* Espaciado entre el menú y la barra de búsqueda */
+}
+
+nav li {
+  margin-right: 25px; /* Espaciado entre elementos del menú */
+}
+
+nav a {
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: normal;
+  text-decoration: none;
+}
+/* Estilos para la barra de búsqueda al lado del menú */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 36px;
+  width: 376px;
+  height: 66px;
+  flex-shrink: 0;
+  margin-left: 7%; /* Espaciado entre el menú y la barra de búsqueda */
+  padding: 5px; /* Espaciado dentro de la barra de búsqueda */
+}
+
+/* Estilos para el input de búsqueda */
+.search-bar input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 18px;
+}
+
+/* Estilos para la imagen de búsqueda */
+.search-bar img {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  margin-right: 10px;/* Espaciado entre el input y la imagen */
+}
+
+/* Cambiar el estilo de enlace cuando se desplaza sobre él */
+nav a:hover {
+  color: rgba(255, 204, 0, 0.96); /* Cambia el color al pasar el mouse sobre un enlace */
+}
+
+/* Aplica estilos responsivos con media queries */
+
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    margin-left: 0;
+    flex-direction: column;
+  }
+
+  nav li {
+    margin: 0 0 10px 0;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-left: 0;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .logo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo h1 {
+    font-size: 28px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+}

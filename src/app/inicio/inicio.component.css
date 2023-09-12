@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+.inicio{
+  position: absolute;
+}
+
+.inicio_texto h1 {
+  height: 49px;
+  width: 649px;
+  position: absolute;
+  color: #0e381e;
+  font-family: 'Yellowtail', cursive;
+  font-size: 36px;
+  font-weight: 400;
+  left: 5%;
+  top: 12%;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.inicio_texto p {
+  position: absolute;
+  color: #ffffff;
+  font-family: "Roboto-ExtraBold", Helvetica;
+  font-size: 55px;
+  font-weight: 800;
+  left: 5%;
+  letter-spacing: 0;
+  line-height: normal;
+  top: 17%;
+  width: 530px;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.boton{
+  position: absolute;
+  left: 5%;
+  bottom: 25%;
+
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 20px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #f1f6b6;
+  width: 60px;
+  height: 60px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #335b6b;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #f1f6b6;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
