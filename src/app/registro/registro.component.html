@@ -1,0 +1,31 @@
+<div class="registro">
+  <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <p class="title">Register </p>
+    <p class="message">¡Regístrate ahora y obtén acceso completo a nuestra aplicación en FoodShare! </p>
+        <div class="flex">
+        <label>
+            <input required="" placeholder="" type="text" class="input" formControlName="nombre">
+            <span>Nombre</span>
+        </label>
+
+    </div>
+
+    <label>
+        <input required="" placeholder="" type="email" class="input" formControlName="email">
+        <span>Email</span>
+    </label>
+
+    <label>
+        <input required="" placeholder="" type="password" class="input" formControlName="contraseña">
+        <span>Contraseña</span>
+    </label>
+    <label>
+        <input required="" placeholder="" type="password" class="input" formControlName="confirmarContraseña">
+        <span>Confirma tu contraseña</span>
+    </label>
+    <button  type="submit" class="submit">Submit</button>
+    <p class="signin">Ya tienes una cuenta? <a href="/login">Signin</a></p>
+  </form>
+
+</div>
+
