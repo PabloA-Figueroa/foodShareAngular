@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="title">Comentarios</div>
+  <div class="comments">
+    <!-- Formulario para agregar comentarios -->
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()" class="comment-form">
+      <div class="user-pic">
+        <!-- Aquí puedes agregar una imagen de usuario si lo deseas -->
+      </div>
+      <div class="box-container">
+        <textarea placeholder="Comentar" formControlName="content" ></textarea>
+        <div class="formatting">
+
+        </div>
+      </div>
+      <button type="submit" class="send-button" title="Send">
+        <svg fill="#ffffff" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#ffffff" d="M12 5L12 20"></path>
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#ffffff" d="M7 9L11.29 4.71C11.63 4.37 11.79 4.21 12 4.21C12.21 4.21 12.37 4.37 12.71 4.71L17 9"></path>
+        </svg>
+      </button>
+    </form>
+
+    <!-- Mostrar comentarios existentes -->
+    <div class="comment-container" *ngFor="let comment of comments">
+      <div class="user">
+        <div class="user-pic">
+          <svg fill="#707277" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linejoin="round" fill="#707277" stroke-linecap="round" stroke-width="2" stroke="#707277" d="M6.58 15.48C5.16 16.32 1.45 18.04 3.71 20.2C4.82 21.25 6.05 22 7.59 22H16.41C17.95 22 19.18 21.25 20.29 20.2C22.55 18.04 18.84 16.32 17.42 15.48C14.1 13.51 9.9 13.51 6.58 15.48Z"></path>
+            <path stroke-width="2" fill="#707277" stroke="#707277" d="M16.5 6.5C16.5 8.99 14.49 11 12 11C9.51 11 7.5 8.99 7.5 6.5C7.5 4.01 9.51 2 12 2C14.49 2 16.5 4.01 16.5 6.5Z"></path>
+          </svg>
+        </div>
+        <div class="user-info">
+          <span>{{ comment.user }}</span>
+          <p class="comment-timestamp">{{ convertTimestampToDateString({timestamp: comment.timestamp}) }}</p>
+        </div>
+      </div>
+      <p class="comment-content">{{ comment.content }}</p>
+    </div>
+  </div>
+</div>
