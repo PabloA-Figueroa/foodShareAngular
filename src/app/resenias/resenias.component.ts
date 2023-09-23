@@ -23,9 +23,20 @@ export class ReseniasComponent implements OnInit {
   ngOnInit() {
     this.getComments();
   }
+  commentError: string = ''; // Variable para almacenar el mensaje de error
 
   onSubmit() {
     const {user, content} = this.commentForm.value;
+
+    // Verifica si el contenido del comentario está vacío o contiene solo espacios en blanco
+    if (!content.trim()) {
+      // Establece el mensaje de error
+      this.commentError = 'No puedes ingresar un comentario vacío.';
+      return; // Detiene la función
+    }
+    // Si no hay error, limpia el mensaje de error
+    this.commentError = '';
+
     const timestamp = new Date();
     const comment: Comment = {user, content, timestamp};
 

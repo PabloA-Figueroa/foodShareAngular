@@ -207,3 +207,8 @@
   outline: none;
   caret-color: #0a84ff;
 }
+.error-message {
+  color: #f5356e;
+  font-size: 14px;
+  margin-top: 5px;
+}

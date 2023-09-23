@@ -18,6 +18,7 @@ const routes: Routes = [
   ...canActivate(()=> redirectUnauthorizedTo(['/registro']))},
   {path:'registro', component:RegistroComponent},
   {path:'login',component:LoginComponent},
+  {path: 'Inicio', component : InicioComponent},
   {path: 'Sobre-Nosotros', component : SobreNosotrosComponent},
   {path: 'resenias', component : ReseniasComponent}
 

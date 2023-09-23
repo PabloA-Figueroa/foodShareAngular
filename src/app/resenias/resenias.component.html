@@ -11,7 +11,7 @@
         <div class="box-container">
           <textarea placeholder="Comentar" formControlName="content" ></textarea>
           <div class="formatting">
-
+            <div class="error-message" *ngIf="commentError">{{ commentError }}</div>
           </div>
         </div>
       </div>
