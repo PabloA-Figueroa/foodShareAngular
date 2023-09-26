@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     SobreNosotrosComponent,
     ReseniasComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

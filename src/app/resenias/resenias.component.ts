@@ -60,13 +60,13 @@ export class ReseniasComponent implements OnInit {
 
     // Define las opciones de formato
     const options: Intl.DateTimeFormatOptions = {
-      year: 'numeric', // Puedes usar '2-digit' para el año abreviado (por ejemplo, "21" en lugar de "2021")
-      month: 'short', // Puedes usar 'long' para el nombre completo del mes
-      day: 'numeric', // Puedes usar '2-digit' para el día con ceros principales (por ejemplo, "03" en lugar de "3")
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-      timeZoneName: 'short', // Agrega el nombre corto de la zona horaria
+      timeZoneName: 'short',
     };
 
     // Utiliza las opciones para formatear la fecha
