@@ -32,13 +32,16 @@ export class RegistroComponent implements OnInit {
   async onSubmit() {
     if (this.formulario.valid) {
       // Verificar que el formulario sea válido antes de enviar los datos
+
       const formData = this.formulario.value as Registro; // Asegúrate de que la interfaz Registro sea correcta
+
 
       // Verifica si las contraseñas coinciden
       if (formData.contraseña !== formData.confirmarContraseña) {
         console.error('Las contraseñas no coinciden');
         return; // No envíes el formulario si las contraseñas no coinciden
       }
+
 
       try {
         // Envía solo el campo de contraseña a Firebase

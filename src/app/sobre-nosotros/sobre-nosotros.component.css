@@ -1,12 +1,100 @@
-.container {
-  max-width: 960px;
-  margin: 0 auto;
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 32px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
 }
-h1 {
-  font-size: 36px;
-  font-weight: bold;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  color: #212121;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 2;
 }
-p {
-  font-size: 16px;
+
+.content .heading {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.content .para {
   line-height: 1.5;
+}
+
+.content .btn {
+  color: #212121;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(
+    45deg,
+    hsl(145deg 41% 53%) 0%,
+    hsl(135deg 43% 57%) 11%,
+    hsl(121deg 44% 61%) 22%,
+    hsl(106deg 52% 61%) 33%,
+    hsl(94deg 59% 60%) 44%,
+    hsl(84deg 66% 59%) 56%,
+    hsl(75deg 71% 57%) 67%,
+    hsl(67deg 77% 55%) 78%,
+    hsl(60deg 81% 52%) 89%,
+    hsl(55deg 100% 50%) 100%);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    45deg,
+    hsl(145deg 41% 53%) 0%,
+    hsl(135deg 43% 57%) 11%,
+    hsl(121deg 44% 61%) 22%,
+    hsl(106deg 52% 61%) 33%,
+    hsl(94deg 59% 60%) 44%,
+    hsl(84deg 66% 59%) 56%,
+    hsl(75deg 71% 57%) 67%,
+    hsl(67deg 77% 55%) 78%,
+    hsl(60deg 81% 52%) 89%,
+    hsl(55deg 100% 50%) 100%);
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover::before {
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: none;
+}
+
+.card:hover .btn {
+  color: #212121;
+  background: #e8e8e8;
+}
+
+.content .btn:hover {
+  outline: 2px solid #e8e8e8;
+  background: transparent;
+  color: #e8e8e8;
+}
+
+.content .btn:active {
+  box-shadow: none;
 }
