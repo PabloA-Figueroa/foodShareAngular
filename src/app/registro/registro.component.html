@@ -1,31 +1,77 @@
 <div class="registro">
   <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
-    <p class="title">Register </p>
-    <p class="message">¡Regístrate ahora y obtén acceso completo a nuestra aplicación en FoodShare! </p>
-        <div class="flex">
-        <label>
-            <input required="" placeholder="" type="text" class="input" formControlName="nombre">
-            <span>Nombre</span>
-        </label>
+    <p class="title">Register</p>
+    <p class="message">¡Regístrate ahora y obtén acceso completo a nuestra aplicación en FoodShare!</p>
 
+    <div class="flex">
+      <label>
+        <input
+          required
+          placeholder=""
+          type="text"
+          class="input"
+          formControlName="nombre"
+        >
+        <span>Nombre</span>
+      </label>
+      <!-- Agregar mensaje de error con comprobación de nulidad opcional -->
+      <div class="error-message" *ngIf="submitted && formulario?.get('nombre')?.hasError('required')">
+        Nombre es un campo requerido.
+      </div>
     </div>
 
     <label>
-        <input required="" placeholder="" type="email" class="input" formControlName="email">
-        <span>Email</span>
+      <input
+        required
+        placeholder=""
+        type="email"
+        class="input"
+        formControlName="email"
+      >
+      <span>Email</span>
     </label>
+    <!-- Agregar mensaje de error con comprobación de nulidad opcional -->
+    <div class="error-message" *ngIf="submitted && formulario?.get('email')?.hasError('required')">
+      Email es un campo requerido.
+    </div>
+    <div class="error-message" *ngIf="submitted && formulario?.get('email')?.hasError('email')">
+      Email no es válido.
+    </div>
 
     <label>
-        <input required="" placeholder="" type="password" class="input" formControlName="contraseña">
-        <span>Contraseña</span>
+      <input
+        required
+        placeholder=""
+        type="password"
+        class="input"
+        formControlName="contraseña"
+      >
+      <span>Contraseña</span>
     </label>
+    <!-- Agregar mensaje de error con comprobación de nulidad opcional -->
+    <div class="error-message" *ngIf="submitted && formulario?.get('contraseña')?.hasError('required')">
+      Contraseña es un campo requerido.
+    </div>
+    <div class="error-message" *ngIf="submitted && formulario?.get('contraseña')?.hasError('minlength')">
+      Contraseña debe tener al menos 6 caracteres.
+    </div>
+
     <label>
-        <input required="" placeholder="" type="password" class="input" formControlName="confirmarContraseña">
-        <span>Confirma tu contraseña</span>
+      <input
+        required
+        placeholder=""
+        type="password"
+        class="input"
+        formControlName="confirmarContraseña"
+      >
+      <span>Confirma tu contraseña</span>
     </label>
-    <button  type="submit" class="submit">Submit</button>
-    <p class="signin">Ya tienes una cuenta? <a href="/login">Signin</a></p>
+    <!-- Agregar mensaje de error con comprobación de nulidad opcional -->
+    <div class="error-message" *ngIf="submitted && formulario?.get('confirmarContraseña')?.hasError('required')">
+      Confirmar contraseña es un campo requerido.
+    </div>
+
+    <button type="submit" class="submit">Submit</button>
+    <p class="signin">¿Ya tienes una cuenta? <a href="/login">Signin</a></p>
   </form>
-
 </div>
-
