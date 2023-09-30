@@ -62,6 +62,7 @@ nav a {
   --online-status: #00da00;
   --font-size: 16px;
   --btn-transition: all 0.2s ease-out;
+  text-decoration: none;
 }
 
 .button-message {

@@ -7,6 +7,7 @@ import {ReseniasComponent} from "./resenias/resenias.component";
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { canActivate,redirectUnauthorizedTo} from '@angular/fire/auth-guard'
+import {UsuarioComponent} from "./usuario/usuario.component";
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path: 'Inicio', component : InicioComponent},
   {path: 'Sobre-Nosotros', component : SobreNosotrosComponent},
-  {path: 'resenias', component : ReseniasComponent}
+  {path: 'resenias', component : ReseniasComponent},
+  {path: 'Usuario',component: UsuarioComponent}
 
 
 ];

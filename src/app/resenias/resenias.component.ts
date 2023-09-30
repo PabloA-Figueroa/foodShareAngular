@@ -10,7 +10,7 @@ import Comment from "../../interfaces/comment.interface";
 })
 export class ReseniasComponent implements OnInit {
   commentForm: FormGroup;
-  comments: Comment[] = []; // Almacena los comentarios
+  comments: Comment[] = [];
 
   constructor(private commentsService: CommentsService) {
     this.commentForm = new FormGroup({
