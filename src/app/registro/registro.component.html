@@ -70,6 +70,9 @@
     <div class="error-message" *ngIf="submitted && formulario?.get('confirmarContraseña')?.hasError('required')">
       Confirmar contraseña es un campo requerido.
     </div>
+    <div class="error-message" *ngIf="submitted && formulario.hasError('passwordMismatch')">
+      Las contraseñas no coinciden.
+    </div>
 
 
     <button type="submit" class="submit">Submit</button>

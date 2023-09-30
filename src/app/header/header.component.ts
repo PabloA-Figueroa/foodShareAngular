@@ -6,6 +6,14 @@ import {UserService} from "../services/user.service";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+  userName: string = '';
+  mail: string = '';
+  constructor(private userService: UserService) {
+  }
+  ngOnInit() {
+    this.userName = this.userService.getUserName();
+    this.mail = this.userService.getUserEmail();
 
+  }
 }
