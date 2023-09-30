@@ -9,6 +9,24 @@ export class UserService{
   constructor( private auth: Auth){
 
   }
+  private userName: string = '';
+  private userEmail: string = '';
+
+  setUserName(name: string) {
+    this.userName = name;
+  }
+
+  getUserName() {
+    return this.userName;
+  }
+
+  setUserEmail(email: string) {
+    this.userEmail = email;
+  }
+
+  getUserEmail() {
+    return this.userEmail;
+  }
   registro ({email, password}:any){
     return createUserWithEmailAndPassword (this.auth,email,password)
   }
@@ -20,8 +38,9 @@ export class UserService{
   loginWithGoogle() {
     return signInWithPopup(this.auth, new GoogleAuthProvider());
   }
-
   logout() {
     return signOut(this.auth);
   }
+
+
 }
