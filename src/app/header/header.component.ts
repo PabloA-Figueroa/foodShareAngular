@@ -14,5 +14,6 @@ export class HeaderComponent implements OnInit{
   ngOnInit() {
     this.userName = this.userService.getUserName();
     this.mail = this.userService.getUserEmail();
+
   }
 }
