@@ -16,6 +16,14 @@ function passwordMatchValidator(control: AbstractControl): { [key: string]: bool
   return password.value === confirmPassword.value ? null : { 'passwordMismatch': true };
 }
 
+// Validador personalizado para verificar una contraseña fuerte
+function strongPasswordValidator(control: AbstractControl): { [key: string]: boolean } | null {
+  const password = control.value;
+  const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+  return strongPasswordRegex.test(password) ? null : { 'strongPassword': true };
+}
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -34,10 +42,10 @@ export class RegistroComponent {
     this.formulario = this.fb.group({
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      contraseña: ['', [Validators.required, Validators.minLength(6)]],
+      contraseña: ['', [Validators.required, Validators.minLength(6), strongPasswordValidator]],
       confirmarContraseña: ['', Validators.required]
     }, {
-      validator: passwordMatchValidator // Aplicamos el validador personalizado
+      validator: passwordMatchValidator // Aplicamos el validador personalizado de coincidencia de contraseña
     });
   }
 
