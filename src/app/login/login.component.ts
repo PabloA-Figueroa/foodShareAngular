@@ -3,6 +3,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
+
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,6 +14,8 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginComponent implements OnInit {
 
   formLogin: FormGroup;
+
+
 
   constructor(
     private userService: UserService,
@@ -24,14 +29,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  commentError: string = '';
   onSubmit() {
     this.userService.login(this.formLogin.value)
       .then(response => {
-        console.log(response);
+        console.log('Login exitoso:', response);
         this.router.navigate(['/inicio']);
       })
       .catch(error => console.log(error));
+      this.commentError = 'El email o la contraseña es incorrecta';
+
+
   }
 
   onClick() {

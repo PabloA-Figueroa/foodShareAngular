@@ -24,6 +24,7 @@
     </svg>
     <input placeholder="Contraseña" title="Input title" formControlName="password" type="password" class="input_field" id="password_field">
   </div>
+  <div class="error-message" *ngIf="commentError">{{ commentError }}</div>
   <button title="Sign In" type="submit" class="sign-in_btn">
     <span>Sign In</span>
   </button>
@@ -33,6 +34,7 @@
     <span>Or</span>
     <hr class="line">
   </div>
+
   <button title="Sign In with Google" type="button" class="sign-in_ggl" (click)="onClick()">
     <svg height="18" width="18" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -47,6 +49,7 @@
       </g>
     </svg>
     <span>Sign In with Google</span>
+
   </button>
 
   <p class="note">Terms of use & Conditions</p>
