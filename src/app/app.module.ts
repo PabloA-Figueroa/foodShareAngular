@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AppRoutingModule} from "./app-routing.module";
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { ReseniasComponent } from './resenias/resenias.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -42,7 +42,8 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

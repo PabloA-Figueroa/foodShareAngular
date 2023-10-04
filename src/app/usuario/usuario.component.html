@@ -1,9 +1,32 @@
-<div >
-  <p>Nombre: {{ userName }}</p>
-  <p>Correo: {{ mail }}</p>
-  <!-- Puedes agregar más campos según sea necesario -->
-</div>
+<app-header></app-header>
 
-<ng-template #loading>
-  <p>Cargando...</p>
-</ng-template>
+<div class="user-profile">
+  <div class="left">
+    <div class="avatar">
+      <img src="assets/imagenes/pngwing.com.png" alt="Avatar">
+    </div>
+  </div>
+  <div class="right">
+    <section>
+      <h3>Información</h3>
+      <div class="info">
+        <p><strong>Nombre:</strong> {{ userName }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>Pedidos</h3>
+      <div class="orders">
+        <div class="data">
+          <ng-container *ngFor="let pedido of pedidos">
+            <div class="pedido-item">
+              <div>{{ pedido.fecha }}</div>
+              <div>{{ pedido.descripcion }}</div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
